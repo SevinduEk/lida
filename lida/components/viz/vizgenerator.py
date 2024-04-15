@@ -24,7 +24,9 @@ class VizGenerator(object):
                  textgen_config: TextGenerationConfig, text_gen: TextGenerator, library='altair'):
         """Generate visualization code given a summary and a goal"""
 
+        print("gen function called")
         library_template, library_instructions = self.scaffold.get_template(goal, library)
+        print(library_template, library_instructions)
         messages = [
             {"role": "system", "content": system_prompt},
             {"role": "system", "content": f"The dataset summary is : {summary} \n\n"},
